@@ -1,0 +1,38 @@
+/* Per a tots els elements de la pàgina */
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1/1.3em;
+}
+
+/* Per a tots els paràgrafs de la pàgina */
+p{
+    color: #555;
+}
+
+/* Per a tots els paràgrafs continguts dins un id="un"*/
+#un p{
+    color: #336699; 
+}
+
+/* Per a tots els enllaços de la pàgina */
+a:link{
+    color: #CC3300;
+}
+
+/*Per a tots els elements "em" continguts dins id="un" */
+#un em{      
+    background: #FFFFCC; 
+    padding: .1em;
+} 
+
+/* Per a tots els elements "em" de classe "especial" a tota la pàgina */
+em.especial{
+    background: #FFCC99; 
+    border: 1px solid #FF9900; 
+    padding: .1em;
+}
+
+/* Per a tots els elements "span" continguts dins  .normal */
+.normal span{ 
+    font-weight: bold; 
+}

@@ -1,0 +1,23 @@
+body {
+    background-color: #FCF3CF;
+
+}
+h4 {
+    font-style: italic; 
+}
+
+a:hover {
+    color: green;
+}
+
+a:focus {
+    color: orange;
+}
+
+.important {
+    color: yellow;
+    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: underline;
+    text-align: right;    
+}

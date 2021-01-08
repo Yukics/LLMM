@@ -1,0 +1,20 @@
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    background-color: red;
+    font-size: 30pt;
+}
+
+section {
+    size: 250px 100px;
+    background-color: blueviolet;
+    font-size: 20pt;
+    padding-left: 400pt;
+}
+
+.destacada {
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 15pt;
+    color: green;
+}
