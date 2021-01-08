@@ -1,0 +1,138 @@
+/*Características generales de la página*/
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16pt;      
+}
+
+/*Establece un fondo a la pagina*/
+body{
+  background-image: url("../media/logo2.png");
+  background-color: grey;
+}
+
+/*Establece como es el h1*/
+h1{
+    font-size: 120%;
+}
+
+/*Defino que la cita sea en italico*/
+blockquote{
+  font-style: italic;
+}
+/*Aline las imagenes de las aperturas*/
+.imgapertura {
+  text-align: center;
+}
+
+/*Margen para los textos de la página*/
+.partidas{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/*Texto de la cabecera*/
+.cabecera{
+  font-size: 500%;
+}
+
+/*Color del enlace*/
+a:link {
+  color: rgb(255, 0, 0);
+}
+
+/* Enlace visitado */
+a:visited {
+  color: rgb(179, 38, 38);
+}
+
+/* Cursor encima del link */
+a:hover {
+  color: rgb(92, 61, 66);
+}
+
+/* Link seleccionado */
+a:active {
+  color: rgb(32, 32, 104);
+}
+
+/*Especifica el tipo de tabla*/
+table {
+  display: table;
+  position: relative;
+  width: 100%;
+  padding-left: 40px;
+  table-layout: fixed;
+}
+
+/*Características de los elemento de la tabla*/
+th, td {
+  padding: 0px 50px;
+  text-align: justify;
+  vertical-align: top;
+  
+}
+
+/* Barra de navegación */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  z-index: 1; /*Esto es para que la cabecera no se superponga al nav bar*/
+}
+
+/* Elementos dentro de navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Cambia el color al pasar el ratón */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+/* Define la cabecera */
+div.header {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+  }
+ 
+/*Le da a la cabecera una imagen opacada*/
+div.header::after {
+    content: "";
+    background: url("../media/bg.png");
+    background-color: #cccccc; /* Used if the image is unavailable */
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+
+/*La imagen de la cabecera*/
+.header img {
+    float: left;
+    width: 110px;
+    height: 120px;
+    background: #555;
+}
+
+/*Texto de la cabecera*/
+.header h1 {
+    position: relative;
+    top: 0px;
+    left: 20px;
+}
+
+
