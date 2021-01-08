@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <script>
+            //Escriu un Script dins d'un HTML que demani per pantalla el teu nom, la teva edat, 
+            //la teva estatura i el teu estat civil. Després ha de mostrar aquestes dades en una mateixa 
+            //línia si l'estat civil és casa, i en columna si l'estat civil és casat o altre.
+            var nom = prompt ("Dime tu nombre");
+            var edat = prompt ("Dime tu edad");
+            var alt = prompt ("Dime tu estatura");
+            var estat = prompt ("Casat o single");
+            if (estat == "casat"){
+                document.writeln(nom + edat +alt + estat);
+            }
+            else{
+                document.writeln(nom + "<br>" + edat + "<br>" + alt + "<br>" + estat);
+            }
+
+        </script>
+    </body>
+</html>

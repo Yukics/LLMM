@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <script>
+            var meses = [];
+
+ /*           for (i=0; i < 12; i++){                
+                meses[i] = prompt("Dame el mes");
+                document.writeln(meses[i]);
+            }*/
+
+            while(meses.length < 12) {                
+                meses.push(prompt ("Introduce un mes: "));
+            }
+
+            meses.forEach(function (mes, index, array) {
+                document.writeln("<h3>"+mes+"</h3>");
+            });
+
+        </script>
+    </body>
+</html>
