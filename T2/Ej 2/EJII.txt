@@ -1,0 +1,38 @@
+Exercicis II
+1.- Crea un HTML que tengui 2 paràgrafs diferents, i després amb javascript, que es pugui canviar el color amb l'esdeveniment onclick (el primer paràgraf a color vermell i fons rosa, i el segon paràgraf a color verd i fons bla
+
+   
+2.- Crea una llista amb els següents components informàtics: Teclat, Ratolí. Després afegeix un tercer element a la llista (Router) quan l'usuari faci doble click sobre un botó.
+
+   
+3.- Modifica l'anterior codi JavaScript, de manera que el component es demani per pantalla (amb una finestra emergent).
+
+    
+4.- Crea una pàgina que contengui un encapçalament h1, i després amb un codi JS, afegir davall del encapçalament, més encapçalaments (el número se demanarà per pantalla, amb el seu text corresponent).
+
+    
+5.- Crear una llista desordenada d'enllaços, dins un <nav>. El elements de la llista són: Google, IES Borja Moll, auditòrium de Palma i al Parc Bit. Després amb un script de js, emprant el mètode document.getElementsByTagName(), canviar el color dels enllaços a un color que es demanarà per pantalla.
+
+     
+6.- Si tenim el següent codi html:
+
+<p>Aquesta web té molta d'enllaços</p>
+<p> Alguns ens permeten anar a pàgines de cercadors com: <br><a href="https://www.google.es">Google</a>, <br><a href="https://www.bing.com">Bing</a>, <br> <a href="https://duckduckgo.com/">Duck Duck Go</a><br></p>
+ <p>També tenim enllaços a altres web interessants com per exemple: <br> <a href="https://www.travelbelize.org/">Belice</a> <br> <a href="https://vr.wowhungary.com/en/map/">Hungria</a><br></p>
+Fes un JavaScript que mostri el número d'enllaços que té la pàgina, l'últim enllaç de la pàgina i quants d'enllaços apunten a Google.
+           
+7.- Si tenim el següent contingut a una pàgina web:
+Internet es una de las herramientas más importantes que tiene la sociedad para mantenerse en contacto con los demás en tiempos de pandemia. Sin embargo, para no correr ningún riesgo, es importante que el usuario conozca bien el funcionamiento de su router: ese dispositivo con forma de caja que te permite conectarte a la red gracias al WiFi. Con el fin de que seamos capaces de conocer su funcionamiento, y de protegernos de cualquier ataque o intento de robo, el Instituto Nacional de Ciberseguridad (INCIBE) ha compartido una guía los pasos que los usuarios deben dar para convertir su conexión en una fortaleza.
+"El router es el dispositivo que nos permite conectarnos y navegar por Internet. Configurarlo de manera correcta evitará, en gran medida, que alguien sin permiso utilice nuestra Red e invada nuestra privacidad y seguridad», explican desde INCIBE a este respecto. De acuerdo con la institución, lo primero que debemos hacer cuando adquirimos un router nuevo es revisar su configuración para comprobar si es suficientemente segura. Para ello debemos coger la dirección IP del dispositivo y ponerla en el navegador que queramos, ya sea Chrome, Safari o cualquier otro.."
+Escriure un JS que permeti que la pàgina mostri inicialment només la primera part del text (el primer paragraf), i que després, fent clic amb el ratolí damunt un text en forma d'enllaç, es pugui veure la resta del text.
+(Nota: Has de crear dos paràgrafs, el segon amb un id que l'identifiqui per poder controlar quan mostrar-ho. Has de crear dues classes que permeti visualitzar o no el text. Per fer l'enllaç buit, pots posar: href="#").
+         
+8.- Canviar el valor d'un atribut "src" d'una imatge mitjançant un script (js). L'HTML ha de tenir un <header> i dedins un titol <h1> i un títol <h2>. I una <section> que mostri tres imatges una devora l'altra.
+
+     
+9.- Crea un HTML on hi hagi:
+
+Un <header>
+Un <main>. Dins d'ell tres paràgrafs amb una classe anomenada "destacar_p" (color text gris, fons
+vermell, negreta i grandària lletra 25pt).
+Un <footer>

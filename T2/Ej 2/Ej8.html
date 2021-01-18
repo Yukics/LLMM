@@ -1,0 +1,34 @@
+<html>
+    <head></head>
+    <body>
+        <header>
+            <h1>Esta pagina</h1>
+            <h2>Reemplaza imagnes</h2>
+        </header>
+        <section>
+            <img src="media/ej61.jpg" width="100px" height="auto">
+            <img src="media/ej62.jpg"width="100px" height="auto">
+            <img src="media/cblack.png"width="100px" height="auto">
+        </section>
+        
+
+        
+
+        <p>Clicka una de estas para intercambairla</p>
+
+        <img src="media/cgreen.PNG" onclick="cambiafoto('cgreen.PNG') "width="100px" height="auto">
+        <img src="media/cpink.PNG" onclick="cambiafoto('cpink.PNG')" width="100px" height="auto">
+
+        <script>
+            function cambiafoto(foton){
+                var cual = parseInt(prompt("Que imagen quieres cambiar"));
+                document.getElementsByTagName("img")[cual-1].src="media/"+foton;
+            }
+            /*
+            Canviar el valor d'un atribut "src" d'una imatge mitjançant un script (js). 
+            L'HTML ha de tenir un <header> i dedins un titol <h1> i un títol <h2>. I una 
+            <section> que mostri tres imatges una devora l'altra.
+            */
+        </script>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <style>
+            .oculto{ display: none;}
+            .visible{display: inline;}
+        </style>       
+    </head>
+
+    <body>
+        <p>Internet es una de las herramientas más importantes que tiene 
+            la sociedad para mantenerse en contacto con los demás en tiempos de pandemia. 
+            Sin embargo, para no correr ningún riesgo, es importante que el usuario conozca 
+            bien el funcionamiento de su router: ese dispositivo con forma de caja que te 
+            permite conectarte a la red gracias al WiFi. Con el fin de que seamos capaces de 
+            conocer su funcionamiento, y de protegernos de cualquier ataque o intento de robo, 
+            el Instituto Nacional de Ciberseguridad (INCIBE) ha compartido una guía los pasos que 
+            los usuarios deben dar para convertir su conexión en una fortaleza.</p>
+            
+        <p id="oculto" class="oculto">"El router es el dispositivo que nos permite conectarnos y navegar por Internet. 
+            Configurarlo de manera correcta evitará, en gran medida, que alguien sin permiso 
+            utilice nuestra Red e invada nuestra privacidad y seguridad», explican desde INCIBE 
+            a este respecto. De acuerdo con la institución, lo primero que debemos hacer cuando 
+            adquirimos un router nuevo es revisar su configuración para comprobar si es suficientemente 
+            segura. Para ello debemos coger la dirección IP del dispositivo y ponerla en el navegador 
+            que queramos, ya sea Chrome, Safari o cualquier otro.."</p>
+            
+        <a id="link" href="#" onclick="mostrarmas()">Mostrar mas</a>    
+        
+        <script>
+            function mostrarmas(){
+                var element=document.getElementById("link");
+                element.classList.add("oculto");
+                var element=document.getElementById("oculto");
+                element.classList.add("visible");
+            }
+            
+            /*
+            Si tenim el següent contingut a una pàgina web:
+
+            Internet es una de las herramientas más importantes que tiene 
+            la sociedad para mantenerse en contacto con los demás en tiempos de pandemia. 
+            Sin embargo, para no correr ningún riesgo, es importante que el usuario conozca 
+            bien el funcionamiento de su router: ese dispositivo con forma de caja que te 
+            permite conectarte a la red gracias al WiFi. Con el fin de que seamos capaces de 
+            conocer su funcionamiento, y de protegernos de cualquier ataque o intento de robo, 
+            el Instituto Nacional de Ciberseguridad (INCIBE) ha compartido una guía los pasos que 
+            los usuarios deben dar para convertir su conexión en una fortaleza.
+
+            "El router es el dispositivo que nos permite conectarnos y navegar por Internet. 
+            Configurarlo de manera correcta evitará, en gran medida, que alguien sin permiso 
+            utilice nuestra Red e invada nuestra privacidad y seguridad», explican desde INCIBE 
+            a este respecto. De acuerdo con la institución, lo primero que debemos hacer cuando 
+            adquirimos un router nuevo es revisar su configuración para comprobar si es suficientemente 
+            segura. Para ello debemos coger la dirección IP del dispositivo y ponerla en el navegador 
+            que queramos, ya sea Chrome, Safari o cualquier otro.."
+
+            Escriure un JS que permeti que la pàgina mostri inicialment només la primera part del text 
+            (el primer paragraf), i que després, fent clic amb el ratolí damunt un text en forma d'enllaç, 
+            es pugui veure la resta del text.
+
+            (Nota: Has de crear dos paràgrafs, el segon amb un id que l'identifiqui per poder controlar 
+            quan mostrar-ho. Has de crear dues classes que permeti visualitzar o no el text. Per fer 
+            l'enllaç buit, pots posar: href="#").
+
+            */
+        </script>
+    </body>
+</html>

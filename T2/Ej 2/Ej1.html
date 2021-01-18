@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <p id="zi" onclick="cambiacolor()" style="font-size: 100px">Hola este es el primer paragrafo que cuando clickes sera rojo y de fondo rosa</p>
+        <p id="zo" onclick="cambiacolor()" style="font-size: 100px">Este es el segundo verde y azul</p>
+        <script>
+            /*   
+            Crea un HTML que tengui 2 paràgrafs diferents, i després 
+            amb javascript, que es pugui canviar el color amb l'esdeveniment 
+            onclick (el primer paràgraf a color vermell i fons rosa, i el 
+            segon paràgraf a color verd i fons bla 
+            */ 
+
+            function cambiacolor() {
+                document.getElementById('zi').style.cssText = 'background-color: pink; color: red;font-size: 100px;';
+                document.getElementById('zo').style.cssText = 'background-color: blue; color: green;font-size: 100px;';
+}
+        </script>
+    </body>
+</html>
