@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="Ej4.css">
+    </head>
+    <body>
+
+        <header>
+            <h1>Encapçalament</h1>
+        </header>
+
+        <main>
+            <img src="media/cblack.png" alt="" onmousemove="cambiacolorbg('black')">
+            <img src="media/cblue.PNG" alt="" onmousemove="cambiacolorbg('blue')">
+            <img src="media/cgreen.PNG" alt="" onmousemove="cambiacolorbg('green')">
+            <img src="media/cpink.PNG" alt="" onmousemove="cambiacolorbg('pink')">
+            <img src="media/cred.PNG" alt="" onmousemove="cambiacolorbg('red')">
+        </main>
+
+        <script>
+            function cambiacolorbg(color){
+
+                document.body.style.backgroundColor = color;
+
+            }
+            
+            /*
+            4. Realitza una pàgina que mostri quatre imatges que representen cercles d'un color 
+            cadascuna d'elles (que trobaràs aquí per descarregar), de manera que quan es passi 
+            amb el ratolí per damunt de cada cercle, ha de canviar el color del fons de la pàgina 
+            amb el mateix color del cercle seleccionat.
+
+            La pàgina ha de tenir un encapçalament <h1> que anirà dins d'una etiqueta <header>, 
+            amb una regla de CSS: centrat i color violeta.
+
+            Les imatges han d'anar dins l'etiqueta semàntica <main>.
+            El <main> ha de tenir les següents regles de CSS:
+            Una amplada automàtica, una alçada de 400px,  un màxim d'amplada i d'alçada automàtica, 
+            un marge de 30px i una vora sòlida de 5px de grossor i de color blau. 
+            Les imatges han de tenir  una grandària de 150px x 150px
+            */
+        </script>
+    </body>
+</html>

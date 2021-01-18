@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+    color: violet;
+}
+
+main{
+    width: auto;
+    height: 400px;
+    max-width: auto;
+    max-height: auto;
+    margin: 30px;
+    outline-style: solid;
+    outline-width: 5px;
+    outline-color: blue;
+}

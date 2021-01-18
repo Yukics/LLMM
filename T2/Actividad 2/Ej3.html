@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="Ej3.css">
+    </head>
+    <body>
+        
+        <main style="text-align: center;">
+            <button type="button" onclick="aplicarcsslista()">Cambiar Estilo lista</button>
+        </main>
+
+        <header>
+            <ul>
+                <li>Elemento1 | </li>
+                <li>Elemento2 | </li>
+                <li>Elemento3</li>
+            </ul>
+        </header>
+
+        <footer>
+            Esto es un footer
+        </footer>
+
+        <script>
+            function aplicarcsslista(){
+                document.getElementsByTagName("ul")[0].classList.add("vistallista");
+                
+
+            }
+            /*
+            3. Aprofitant l'exercici anterior, a l'HTML afegirem una llista (potser ordenada o desordenada) 
+            amb tres elements dins d'un <header>.
+
+            A més escriurem una nova regla a l'arxiu de CSS, que definirà l'estil d'una classe anomenada 
+            "vistallista" que tendrà les següents regles:
+
+            Ha de mostrar els elements en línia (propietat: display:inline)
+            S'ha de posar a la part més superior de la pàgina
+            El color del text ha de ser #229954
+            La font de la lletra ha de ser Arial al 125%
+            I finalment, escriurem una funció js que permeti afegir la classe "vistallista" a la llista. 
+            Aquesta funció es cridarà mitjançant l'esdeveniment "onclick" que també es llançarà mitjançant un 
+            botó que crearem al <main>.
+             */
+        </script>
+    </body>
+</html>

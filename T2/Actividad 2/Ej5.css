@@ -1,0 +1,35 @@
+h1{
+    color: rgb(182, 231, 182);
+    text-align: center;
+    background-color: rgb(232, 241, 214);
+    
+    outline-style: solid;
+    outline-width: 10px;
+    outline-color: rgb(8, 75, 2);
+
+    /*Esto es extra por probar*/
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(8, 75, 2);
+}
+
+section{
+    font-size: 34pt;
+    text-align: center;
+    color: #313131;
+    width: auto;
+    height: 250px;
+    background-color: rgb(235, 223, 223);
+    outline-style: solid;
+    outline-width: 3px;
+    outline-color: rgb(0, 255, 157);
+}
+
+.format{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(80, 185, 255);
+    text-align: center;
+    font-size: 25pt;
+    color: rgb(26, 1, 1);
+    margin-top: 10px;
+}

@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="Ej5.css">
+    </head>
+
+    <body onLoad="addformat()">
+        
+        <h1>Aplicar un estil d'una classe al CSS</h1>
+        <section>Això és una secció de la pàgina</section>
+
+        <script>
+            function addformat(){
+                var element = document.getElementsByTagName("section");
+                element[0].classList.add("format");
+            }
+            /*
+             Crea una pàgina HTML que tengui:
+
+                    Un encapçalament <h1>, amb el text: "Aplicar un estil d'una classe al CSS".
+                    Una etiqueta semàntica <section>, que contendrà un paràgraf amb el text:
+                    "Això és una secció de la pàgina". 
+               
+                El CSS per h1:
+                    Color del text: rgb(182, 231, 182);
+                    Vora: color: rgb(8, 75, 2), amplada 10px i solid;
+                    Text centrat;
+                    Color de fons: rgb(232, 241, 214);
+
+                El CSS per <section>
+                    grandària font: 34pt,
+                    text centrat,
+                    color text: #313131,
+                    width: auto;
+                    height: 250px;
+                    color de fons: rgb(235, 223, 223);
+                    vora sòlida i de color rgb(0, 255, 157), amb grossor de 3px.
+
+                Crea un codi JS que permeti afegir una classe anomenada "format" a l'element 
+                < section>, que tendrem ja definida prèviament també al CSS:
+                    regla del CSS per a la classe format:
+                    Amplada: 100%;
+                    Alçada: 100px;
+                    Color del fons: rgb(80, 185, 255);
+                    Text centrat;
+                    Grandària font: 25pt;
+                    Color del text: rgb(26, 1, 1);
+                    A 10px del marge de d'alt;
+            */
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="Ej2.css">
+    </head>
+    <body>
+        <main style="text-align: center;">
+            <button type="button" onclick="cambiarfooter()">Cambiar footer</button>
+        </main>
+
+        <footer>
+            Esto es un footer
+        </footer>
+
+        <script>
+
+            function cambiarfooter(){
+                var footernuevo = prompt("Que quieres introducir en el footer?: ");
+                document.getElementsByTagName("footer")[0].textContent = footernuevo;
+            }
+
+            /*
+            Crear un document HTML que tengui:
+
+            Un <main> que contendrà un botó.
+            Un <footer> que tendrà el text que vulguis.
+            Un CSS pel <footer>: Que quedi fixat abaix de la pàgina, amb una grandària de 100% x 25%, 
+            de fons vermell, lletra blanca amb grandària 30px i centrada.           
+            
+            
+            Fer una funció js que permeti canviar el text que hi ha dins del <footer> de la pàgina, 
+            demanant el nou text per pantalla. La funció és cridarà mitjançant l'esdeveniment HTML 
+            "onclick" que es llançarà mitjançant el botó que hem creat al <main>.
+            */
+        </script>
+    </body>
+</html>
