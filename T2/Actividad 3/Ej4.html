@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: cyan;
+            }
+            
+            div{
+                width: 800px;
+                height: 200px;
+                display: block;
+            }
+            h1{
+                text-align: center;
+            }
+            h2{
+                color: red;
+                font-size: 20px;
+                font-style: italic;
+            }
+            aside{
+                width: 300px;
+                height: 25px;
+                background-color: darkblue;
+                float: right;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div>
+            <h1>
+                A continuació veim la llista dels guanyadors del concurs
+            </h1>
+            <h2 id="h2" style="text-align: center;"></h2>
+        </div>
+        
+
+        <aside>
+            <form>
+                <label for="word">Nom</label>
+                <input type="text" name="word" id="word">               
+                <button type="button" onclick="seth2()">Establece</button>                
+            </form>
+        </aside>
+        
+        <script>
+            function seth2(){
+                var palabra = document.getElementById("word").value;             
+                                        
+                if(/^[a-zA-Z]+$/.test(palabra)){
+                    document.getElementById("h2").textContent=palabra;                    
+                }
+                else{
+                    alert('Els noms no tenen nombres ni caracters alfanumerics');                    
+                }                    
+            }               
+            /*
+            Amb el formulari de l'exercici 2, fes la validació mitjançant JavaScript.
+            */
+        </script>
+    </body>
+</html>
