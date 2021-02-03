@@ -1,0 +1,53 @@
+<html>
+    <head></head>
+
+    <body>
+
+        <img id="img" src="media/prueba.JPG" alt="imagen de arquero" width="400px" height="auto">
+        
+        <form>
+            <input type="button" onclick="mostrar()" value="Visible">
+            <input type="button" onclick="ocultar()" value="Ocultar">
+            <input type="button" onclick="ampliar()" value="Ampliar">
+            <input type="button" onclick="reducir()" value="Reducir">
+            
+        </form>
+
+        <script>
+            /*Creare una funcion por cada evento*/
+
+            function mostrar() {
+                var img = document.getElementById('img');/*Esto selecciona la imagen por el id que le he dado, muy original, lo se*/
+                img.style.visibility = 'visible';/*Aplica el estilo de visibilidad, abajo este valor es hidden*/
+            }    
+
+            function ocultar() {
+                var img = document.getElementById('img');
+                img.style.visibility = 'hidden';
+            } 
+
+            function ampliar() {
+                var img = document.getElementById('img');/*El uso es simple, selecciono la imagen*/
+                var ancho = img.clientWidth;/*Extraigo el ancho de la imagen, puesto que la altura es automatica y mantiene el ratio*/
+                img.style.width = (ancho + 50) + "px";/*Le añado 50 pixeles a la propiedad ancho, y en la funcion de abajo le resto 50 px*/
+            
+            }  
+
+            function reducir() {
+                var img = document.getElementById('img');
+                var ancho = img.clientWidth;
+                img.style.width = (ancho - 50) + "px";
+            }     
+            
+            
+
+            /*
+            Fer una pàgina web que mostri:
+                Un botó que permeti fer visible una imatge.
+                Un botó que permeti fer invisible una imatge.
+                Un botó que permeti canviar la grandària de la imatge i fer-la més grossa.
+                Un botó que permeti canviar la grandària de la imatge i fer-la més petita.
+            */
+        </script>
+    </body>
+</html>

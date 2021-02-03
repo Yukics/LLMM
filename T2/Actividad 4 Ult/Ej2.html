@@ -1,0 +1,23 @@
+<html>
+    <head></head>
+    <body onclick="preguntarbmoll()" style="background-color: cornflowerblue;">
+        <h1 id="falso"></h1>
+        <script>
+            function preguntarbmoll(){
+                var quehacer = confirm("Quieres abrir la web del CIFP FBMOLL?");
+                if(quehacer == true){
+                    window.open("https://www.cifpfbmoll.eu/");
+                    document.getElementById("falso").innerHTML="";
+                } else {
+                    document.getElementById("falso").innerHTML="Has decidio no acceder a la web ofertada";
+                }
+            }
+            /*
+            Fer un script que mitjançant finestres, ens demani confirmació per accedir a una url concreta, 
+            per exemple a la web del Borja Moll. Ens ha d'oferir anar-hi o cancel·lar l'acció. La pàgina 
+            web ha de llançar l'script mitjançant un esdeveniment d'HTML (onclick, ondblclick, ...). 
+            Aquesta pàgina web ha de tenir un color de fons.
+            */
+        </script>
+    </body>
+</html>

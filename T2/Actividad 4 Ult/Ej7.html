@@ -1,0 +1,80 @@
+<html lang="es-ES">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        
+        <header>
+            <h1>Els nostres usuaris són esportistes</h1>
+        </header>
+
+        <form action="http://www.google.com/search" method="get">
+            Google:
+            <input type="search" name="q" value="esports">
+            <input type="submit" value="Cercar">
+        </form>
+        <form>
+            <fieldset>
+                <legend>Esportista</legend>
+
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" required><br>
+
+                <label for="edat">Edat</label>
+                <input type="number" name="edat" id="edat" min="1" required><br>
+
+                <label for="esport">Esport</label>
+                <input type="text" id="esport" name="esport" required><br>
+
+                <label for="color">Color de la camiseta</label>
+                <input type="color" name="color" id="color" required><br>
+
+                <label for="start">Des quan?</label>
+                <input type="date" name="start" id="start" required><br>
+            </fieldset>
+            <input type="button" value="Añadir" onclick="anadir();">           
+
+        </form>
+
+        <main id="lista">
+
+        </main>
+
+        <script>
+            function anadir(){
+                //Extraemos la información de los campos del formulario y los asigno a variables
+                var nom = document.getElementById("nom").value;
+                var edat = document.getElementById("edat").value;
+                //Lo pongo en Uppercase para que no se de el caso de Futbol , futbol, FUTBOL, y sean nuevas categorias.
+                var deporte = (document.getElementById("esport").value).toUpperCase();                
+                var color = document.getElementById("color").value;
+                var start = document.getElementById("start").value;
+
+                //Creo el texto que será insertado dentro de un section
+                var combo = "<br>"+"<p>"+"-"+nom+", "+edat+" anys , "+"color de camiseta RGB: "+color+" , va començar a "+start+"</p>";
+
+                //Creo esta variable para hacer mas legible el resto de la funcion, y no escribir esto todo el rato
+                var section = document.getElementById(deporte);
+
+                //Si no existe el ID del deporte se crea un section si ya existe se añade
+                if(section==null){
+
+                    section = document.createElement("section"); 
+
+                    //Añadimo id al section recién creado con el deporte
+                    section.setAttribute("id", deporte);    
+
+                    //Introduzco la cabecera del section
+                    section.innerHTML = "<h3>"+deporte+"</h3>";
+                    document.getElementById("lista").appendChild(section);
+
+                    //Añado la información de la persona
+                    section.innerHTML += combo;
+
+                } else {
+                    section.innerHTML += combo;                             
+                }
+            }
+        </script>
+    </body>
+</html>

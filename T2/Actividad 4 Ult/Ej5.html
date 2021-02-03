@@ -1,0 +1,55 @@
+<html>
+    <head></head>
+    <body>
+        <form action="">
+            <!--No estoy contenplando primeros nombres compuestos, solo simples-->
+            <label for="name">Name</label>
+            <input id="name" type="text" required autofocus pattern="[A-Z][a-z]*" title="Primera mayúscula, resto Minúscula"><br>
+
+            <!--El correo electronico está validado por el tipo y el pattern-->
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required><br>
+
+            <!--Al igual que el correo se valida por el pattern y por el tipo de dato-->
+            <label for="telefono">Teléfono</label>
+            <input type="tel" name="Telefono" id="telefono" pattern="[0-9]{9}" title="Se compone de 9 dígitos"><br>
+
+            <!--Tipo de texto password-->
+            <label for="pass">Password</label>
+            <input type="password" name="password" id="pass" pattern="^[A-Z](?=.*\d{2,})[A-Za-z0-9_-]{5,9}$">
+
+            <!--El patter de la contraseña me ha costado un poco, primero obliga a que el primer caracter sea 
+                mayúsucla, minimo haya dos digitos y en total ocupe minimo 6 caracteres 0-5, 6 huecos, y maximo 10-->
+
+            <input type="submit" value="Enviar">
+
+            <!--
+                Me parece que la forma más limpia de validar esto es con html ya que la función a la que llame
+                probablemente sea mucho peor que algo que habrá desarrollado un grupo de ingenieros de software.
+                Y así se ve de un vistazo todo.
+                Además he utilizado distintos tipos de regex según iba aprendiendo como funcionan un poco mas en 
+                profundidad
+            -->
+        </form>
+        <script>
+
+            /*
+            Crea una pàgina web que contengui un formulari amb els següents camps d'informació:
+
+            Nom, que sigui obligatori, atribut autofocus.
+            
+            Correu electrònic, que sigui obligatori. 
+            
+            Telèfon, amb un control de tipus tel. El telèfon ha  de tenir 9 dígits.
+            
+            Una contrasenya, obligatòria, que tengui una longitud mínima de 6 caràcters 
+            i màxima de 10. Ha de començar per una lletra majúscula o minúscula, i com 
+            a mínim dos números.
+
+            Un botó d'enviament.
+            i valida el formulari (pots emprar la funció de validació js i també incloure 
+            atributs html (pattern per controlar el patró d'entrada, required, etc.)
+            */
+        </script>
+    </body>
+</html>

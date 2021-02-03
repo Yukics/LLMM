@@ -1,0 +1,136 @@
+<html>
+    <head></head>
+    <body>
+        
+        <header>
+            <h1>Els nostres usuaris són esportistes</h1>
+        </header>
+
+        <form>
+            <fieldset>
+                <legend>Esportista</legend>
+
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" required><br>
+
+                <label for="edat">Edat</label>
+                <input type="number" name="edat" id="edat" min="1" required><br>
+
+                <label for="esport">Esport</label>
+                <input type="text" id="esport" name="esport" required><br>
+
+                <label for="color">Color de la camiseta</label>
+                <input type="color" name="color" id="color" required><br>
+
+                <label for="start">Des quan?</label>
+                <input type="date" name="start" id="start" required><br>
+            </fieldset>
+            <input type="button" value="Añadir" onclick="anadir();">           
+
+        </form>
+
+        <main id="lista">
+
+        </main>
+
+        <script>
+            function anadir(){
+                //Extraemos la información de los campos del formulario y los asigno a variables
+                var nom = document.getElementById("nom").value;
+                var edat = document.getElementById("edat").value;
+                //Lo pongo en Uppercase para que no se de el caso de Futbol , futbol, FUTBOL, y sean nuevas categorias.
+                var deporte = (document.getElementById("esport").value).toUpperCase();                
+                var color = document.getElementById("color").value;
+                var start = document.getElementById("start").value;
+
+                //Creo el texto que será insertado dentro de un section
+                var combo = "<br>"+"<p>"+"-"+nom+", "+edat+" anys , "+"color de camiseta RGB: "+color+" , va començar a "+start+"</p>";
+
+                //Creo esta variable para hacer mas legible el resto de la funcion, y no escribir esto todo el rato
+                var section = document.getElementById(deporte);
+
+                //Si no existe el ID del deporte se crea un section si ya existe se añade
+                if(section==null){
+
+                    section = document.createElement("section"); 
+
+                    //Añadimo id al section recién creado con el deporte
+                    section.setAttribute("id", deporte);    
+
+                    //Introduzco la cabecera del section
+                    section.innerHTML = "<h3>"+deporte+"</h3>";
+                    document.getElementById("lista").appendChild(section);
+
+                    //Añado la información de la persona
+                    section.innerHTML += combo;
+
+                } else {
+                    section.innerHTML += combo;                             
+                }
+            }
+            
+            //TE DEJO MI PRIMERA APROXIMACIÓN QUE HACE LO MISMO PERO MENOS EFICIENTES
+            //E INCLUSO ANTES CON LOS NODOS LO ESTABA COMPLICANDO MAS
+                /*
+                //Probamos que no haya o haya un section ya creado
+                if (typeof sections == "undefined" || sections.length==0){
+                    //Creamos el primer section
+                    var section = document.createElement("section"); 
+
+                    //Añadimo id al section recién creado con el deporte
+                    section.setAttribute("id", deporte.toUpperCase());    
+
+                    //Introduzco la cabecera del section
+                    section.innerHTML = "<h3>"+deporte.toUpperCase()+"</h3>";
+                    document.getElementById("lista").appendChild(section);
+
+                    //Añado la información de la persona
+                    var persona = document.getElementById(deporte.toUpperCase());
+                    persona.innerHTML += combo;
+                
+                //En caso de haberlo 
+                } else {
+                    //Recorremos los section para ver si ya hay un deporte con section
+                {
+
+                        //Si no existe el deporte
+                        
+                    if(document.getElementById(deporte.toUpperCase())==null){
+
+                        var section = document.createElement("section"); 
+
+                        //Añadimo id al section recién creado con el deporte
+                        section.setAttribute("id", deporte.toUpperCase());    
+
+                        //Introduzco la cabecera del section
+                        section.innerHTML = "<h3>"+deporte.toUpperCase()+"</h3>";
+                        document.getElementById("lista").appendChild(section);
+
+                        //Añado la información de la persona
+                        var persona = document.getElementById(deporte.toUpperCase());
+                        persona.innerHTML += combo;
+
+                    } else {
+                        var persona = document.getElementById(deporte.toUpperCase());
+                        persona.innerHTML += combo;                             
+                    }
+                }
+                    
+                }  
+            }
+                */
+            /*
+
+            Crea una pàgina que contengui un formulari que demani:
+
+            Nom de l'usuari, edat, esport que practica l'usuari (com per exemple basquet, futbol, atletisme, etc.), color de la camiseta del seu club esportiu, des de quan practica l'esport.
+
+            La pàgina ha de tenir:
+
+                -Un Header amb el títol: "Els nostres usuaris són esportistes"
+
+                -Seccions que s'aniran creant a mida que els usuaris emplenin el formulari, per exemple, podria quedar:
+            */
+        </script>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: cyan;
+            }
+            h1{
+                text-align: center;
+                color: gray;
+            }
+            ul{margin-top: 2%;margin-left: 40%;}
+            p{color: blue; columns: 2;}
+            #resultado{columns: 1;}
+        </style>
+    </head>
+
+    <body onclick="extraerh2p();">
+        <header>
+            <ul style="display:flex;list-style:none;">
+                <li><a href="#">NOTICIAS |</a></li>
+                <li><a href="#">GUÍAS |</a></li>
+                <li><a href="#">ANÁLISIS |</a></li>
+                <li><a href="#"> ARTÍCULOS</a></li>
+            </ul>
+            <h1>Cómo saber qué velocidad de conexión a Internet tengo</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Velocidad de conexión a Internet</h2>
+
+                <p>La velocidad de conexión a Internet que tengamos dependerá, directamente, de la tarifa que 
+                    hayamos contratado. Es así de simple porque, al final, hablamos de un servicio, y es el proveedor 
+                    el que tiene la responsabilidad contractual de cumplir con la velocidad que nos ha ofrecido. 
+                    Sin embargo, debemos tener mucho cuidado con este tema, ya que algunos proveedores pueden ofrecer 
+                    una velocidad elevada, pero esta no está totalmente garantizada. Por ejemplo, en conexiones de fibra 
+                    óptica, lo normal es ofrecer un mínimo garantizado del 80% de la velocidad máxima.
+                </p>               
+                
+                <h3>El servicio que hayamos contratado, y la calidad del mismo, determinarán la base de nuestra velocidad 
+                    de conexión a Internet, aunque esta puede verse afectada, posteriormente, por otros aspectos importantes, 
+                    çentre los que podemos destacar:
+                </h3>
+                
+                <ul>
+                    <li>El router y el hardware que utilicemos.</li>
+                    <li>Si nos conectamos por cable o por Wi-Fi, y en este último caso, el estándar utilizado, la distancia-  y los obstáculos.</li>
+                    <li>La configuración también puede influir en la velocidad máxima.</li>
+                    <li>El grado de saturación de nuestra conexión.</li>
+                    <li>El estado de los servidores a los que nos conectemos.</li>
+                </ul>
+                
+            </section>
+
+            <section>
+                <p>Por ejemplo, puede que tengamos una conexión de fibra a 1 Gbps, pero si nos conectamos a través de un cable de 100 Mbps 
+                    estaremos infrautilizándola por un error tan grave como fácil de solucionar. Por otro lado, si tenemos una conexión perfecta
+                    pero nos conectamos a servidores que están saturados y tienen una alta latencia nuestra experiencia será terrible, aunque
+                    obviamente la culpa no será de la velocidad de nuestra conexión a Internet.
+                </p>                
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Publicado el 24 enero, 2021 por Isidro Ros</p>
+        </footer>
+
+        <fieldset>
+            <p id="resultado"></p>
+        </fieldset>
+        
+
+        <script>
+            function extraerh2p(){
+                
+                var h2s = document.getElementsByTagName("h2");
+                var ps = document.getElementsByTagName("p");
+                var resultado = document.getElementById("resultado");
+                                
+                resultado.innerHTML += "<h3>Titulos h2</h3>";
+                for(i=0;i<h2s.length;i++){
+                    resultado.innerHTML += h2s[i].textContent + "<br>";
+                }
+
+                resultado.innerHTML += "<h3>Parrafos</h3>";
+                for(i=0;i<ps.length-1;i++){
+                    /*Me di cuenta que me sacaba 4 resultado y uno de ellos era la suma de todo el ultimo parrafo, 
+                    se soluciona con un -1 a la hora de medir el máximo de la lista de parrafos*/
+                    resultado.innerHTML += ps[i].textContent + "<br>"+ "<br>";
+                }
+            }
+            /*Sacar los h2 y p de la página*/
+        </script>
+    </body>
+</html>
