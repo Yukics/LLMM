@@ -1,6 +1,6 @@
 <html>
     <head></head>
-    <body>
+    <body  onload="getDate();">
         
         <header>
             <h1>Els nostres usuaris són esportistes</h1>
@@ -23,7 +23,7 @@
                 <input type="color" name="color" id="color" required><br>
 
                 <label for="start">Des quan?</label>
-                <input type="date" name="start" id="start" required><br>
+                <input required type="date" name="start" id="start"><br>
             </fieldset>
             <input type="button" value="Añadir" onclick="anadir();">           
 
@@ -68,6 +68,24 @@
                     section.innerHTML += combo;                             
                 }
             }
+			
+            //Esta función establece por defecto el día actual para que no quede un campo vacío
+			function getDate(){
+				var d = new Date();
+				
+				month = '' + (d.getMonth() + 1),
+				day = '' + d.getDate(),
+				year = d.getFullYear();
+
+				if (month.length < 2) 
+					month = '0' + month;
+				if (day.length < 2) 
+                    day = '0' + day;
+                    
+				d=[year, month, day].join('-');
+				
+				document.getElementById("start").value = d;
+			}
             
             //TE DEJO MI PRIMERA APROXIMACIÓN QUE HACE LO MISMO PERO MENOS EFICIENTES
             //E INCLUSO ANTES CON LOS NODOS LO ESTABA COMPLICANDO MAS
