@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <style>
+            main{
+                text-align: center;
+            }
+            footer{
+                position: absolute;
+                bottom: 10px;
+            }
+            
+
+        </style>
+    </head>
+    <body onload="añadirelementos()">
+        <main>
+           
+
+        </main>
+
+        <footer>
+            
+
+        </footer>
+
+        <script>
+            function añadirelementos(){
+                /*Pedimos los datos*/
+                var h1 = prompt("Introduce el titulo: ");
+                var direccion = prompt("Introduce la direccion: ");
+                     
+                /*Creamos el h1 e introducimos dentro lo que hemos pedido antes y luego lo añadimos a main*/
+                h1element = document.createElement("h1");/*Creamos el elemento h1*/
+                h1element.innerHTML = h1; /*Le añadimos el valor*/
+                document.getElementsByTagName("main")[0].appendChild(h1element);/*Añadimos el nuevo elemento a main*/
+
+                /*Lo mismo pero con address en el footer*/
+                addresselement = document.createElement("address"); 
+                addresselement.innerHTML = direccion;
+                document.getElementsByTagName("footer")[0].appendChild(addresselement);
+
+            }
+
+        </script>
+    </body>
+</html>

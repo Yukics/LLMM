@@ -1,0 +1,32 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>Ejercicio de sumar o multiplicar</h2>
+        <button onclick="nada()">Comenzar</button>
+        
+        <script>
+            function quehacer(){
+                var sumaomulti = prompt("Quieres sumar o multiplicar: ");
+
+                if (sumaomulti!="sumar" && sumaomulti!="multiplicar"){
+                    alert("No has seleccionado una opción correcta");
+                    await sleep(10);
+                    quehacer();
+                }
+
+                var n = prompt("Dime un numero: ");
+                var confirmacion = confirm("Estas seguro de que quieres"+sumaomulti+" "+n+"?");
+
+                if (confirmacion == true){
+
+                }
+                else {
+                    alert("Vale no multiplicare ni sumare nada");
+                }
+
+            }
+        </script>
+    </body>
+</html>

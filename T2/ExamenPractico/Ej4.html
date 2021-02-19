@@ -1,0 +1,88 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>Participants enquesta</h2>
+        <form>
+            <fieldset><!--Sirve para agrupar campos de formulario-->>
+                <legend>Encuesta</legend>
+                <label for="nombrecomp">Nombre completo: </label>
+                <input type="text" name="nombrecomp" id="nombrecomp"><br>
+
+                <label for="estudis">Estudios que se cursan: </label>
+                <input type="text" name="estudis" id="estudis"><br>
+
+
+                <label for="datastart">Fecha de comienzo: </label>
+                <input type="date" name="datastart" id="datastart">
+
+                <h4>Hobbies</h4>
+                <label for="pesca">Pesca</label>
+                <input type="checkbox" id="pesca" name="pesca" value="pesca"><br>
+
+                <label for="deporte">Deporte</label>
+                <input type="checkbox" id="deporte" name="deporte" value="deporte"><br>
+
+                <label for="nohacernada">No hacer nada</label>
+                <input type="checkbox" id="nohacernada" name="nohacernada" value="no hacer nada"><br><br><br>
+
+                <!--Con estos dos botones añadiremos o borraremos el formulario-->
+                <input type="button" onclick="añadirlista()" value="Añadir a la lista">
+                <input type="button" onclick="borrartodo()" value="Borrar campos">
+            </fieldset>            
+        </form>
+
+        <ul>
+
+        </ul>
+
+        <script>
+            function borrartodo(){
+                /*Establece todos los campos como vacios*/
+                document.getElementById("nombrecomp").value = "";
+                document.getElementById("estudis").value = "";
+                document.getElementById("datastart").value = "";
+                document.getElementById("pesca").checked = false;
+                document.getElementById("deporte").checked = false;
+                document.getElementById("nohacernada").checked = false;
+
+            }
+
+            function añadirlista(){
+                /*Rescatamos los valores del formulario*/
+                var nombre = document.getElementById("nombrecomp").value;
+                var estudios = document.getElementById("estudis").value;
+                var fechast = document.getElementById("datastart").value;
+                var chpesca = document.getElementById("pesca").checked;
+                var chdeporte = document.getElementById("deporte").checked;
+                var chnohacernada = document.getElementById("nohacernada").checked;
+
+                //Creo esta variable para saber los hobbies y los if de despues añaden valores a esta variables
+                var hobbies = "";
+
+                if (chpesca==true){
+                    hobbies = "pesca";
+                }
+                if (chdeporte==true){
+                    hobbies += " deporte";
+                }
+                if (chnohacernada==true){
+                    hobbies += " nohacernada";
+                }
+
+                //Creamos el elemento que añadiremos en la lista
+                var elementoañadir = "Nombre: "+nombre+", "+"estudiando: "+estudios+", "+ "desde: "+fechast+", "+"hobbies: "+hobbies;
+
+                //Creamos un elemento li
+                li = document.createElement("li");   
+
+                //Introduzco el li al ul
+                li.innerHTML = elementoañadir;
+                document.getElementsByTagName("ul")[0].appendChild(li);                
+
+            }
+
+        </script>
+    </body>
+</html>

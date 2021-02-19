@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <style>            
+            .blau{
+                color: blue;
+            }
+            .colorverd {
+                border: 3px solid #69F3D1;
+                color: #29FC9C;
+            }
+        </style>
+    </head>
+    <body onclick="cambiarcolores();">
+        <h1>Esto es un h1</h1>
+        <h2 class="blau">Esto es un h2</h2>
+        <script>
+            function cambiarcolores(){
+                /*con la estructura document.getElemengsByTagName, seleccionamos las cabeceras en formato lista por eso el [] con un cero*/
+                document.getElementsByTagName("h1")[0].classList.add("blau");/*Añadimos la clase blau a h1*/
+                document.getElementsByTagName("h2")[0].classList.remove("blau");/*Quitamos la clase blau a h2*/
+                document.getElementsByTagName("h2")[0].classList.add("colorverd");/*Añadimos la clase colorverd a h2*/
+
+            }
+
+        </script>
+    </body>
+</html>

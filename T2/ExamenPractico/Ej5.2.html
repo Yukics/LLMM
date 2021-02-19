@@ -1,0 +1,58 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>Ejercicio de sumar o multiplicar</h2>
+        <button onclick="quehacer()">Comenzar</button>
+
+        <h3></h3>
+        
+        <script>
+            function quehacer(){
+
+                //Pedimos que hacer y comprobamos que este bien
+                var sumaomulti = prompt("Quieres sumar o multiplicar: ");
+                
+                if (sumaomulti!="sumar" && sumaomulti!="multiplicar"){
+                    alert("No has seleccionado una opción correcta");
+
+                }
+
+                //Pedimos el numero
+                var n = parseInt(prompt("Dime un numero: "));
+                var confirmacion = confirm("Estas seguro de que quieres "+sumaomulti+" "+n+"?");
+
+                //Comprobamos que sea un entero
+                if(Number.isInteger(n)!=true){
+                    alert("No introduciste un numero");
+                    confirmacion=false;
+                }
+
+                //Si la confirmacion es cierta procede a multiplicar o sumar
+                //Simplement un bucle
+                if (confirmacion == true){
+                    if(sumaomulti=="sumar"){
+                        var sumatotal = 0;
+                        for(i=0;n>0;n--){
+                            sumatotal +=n;
+                        }
+                        alert(sumatotal);                        
+                    } 
+                    if (sumaomulti=="multiplicar") {
+        
+                        var multitotal = 1;
+                        for(i=1;i<=n;i++){
+                            multitotal *= i;
+                            
+                        }
+                        alert(multitotal);                        
+                    }
+                }
+                else {
+                    alert("Vale no multiplicare ni sumare nada");
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2 style="text-align: center;">Canviarem el colors de la pàgina</h2>
+        <!--No hay mucho que decir, creo un formulario con tipo de entrada color y uno ode tipo boton 
+            ya que si utilizamos un boton normal se buguea y se reinicia-->
+        <form style="text-align: center;">
+            <label for="txt">Color del texto</label>
+            <input type="color" name="colortxt" id="txt">
+            <label for="bg">Color de fondo</label>
+            <input type="color" name="colorbg" id="bg">
+            <input type="button" value="Cambiar colores" onclick="cambiarcolores()">
+        </form>
+        <script>
+            function cambiarcolores(){
+                /*Con esta funcion sacamos el contenido de los campos del formulario utilizando el id
+                y luego los aplicamos al body con el metodo style.lo que queremos cambiar*/
+               var colortxt = document.getElementById("txt").value;
+               var colorbg = document.getElementById("bg").value;
+               document.getElementsByTagName("body")[0].style.color=colortxt;
+               document.getElementsByTagName("body")[0].style.backgroundColor=colorbg;
+
+            }
+        </script>
+    </body>
+</html>
