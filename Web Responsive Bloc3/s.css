@@ -52,7 +52,7 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 1.5vw;
+  font-size: 1vw;
 }
 
 /*Esto de aqui puede parecer un poco raro pero no ha sido copiado y pegado porque si, 
@@ -73,7 +73,7 @@ li a:hover:not(.active) {
 
 /*Formato del aside*/
 .right {
-  background-color:#e5e5e5;
+  background-color:#c8c8c89d;
   float:left;
   width:30%;
   padding:15px;
@@ -146,9 +146,16 @@ input[type=submit]:hover {
   clear: both;
 }
 
+footer{
+  background-color:#c8c8c89d;
+  text-align:center;
+  padding:10px;
+  margin-top:7px;
+}
+
 
 /*Este apartado aporta el responsive, cambia determinadas caracteristicas del css dependiendo del tamaño de la pantalla*/
-@media only screen and (max-width:620px) {
+@media only screen and (max-width:640px) {
   .cabecera {
     color: #ececec;
     padding:15px;
