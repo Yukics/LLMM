@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-sizing</title>
+    <style>
+      * {
+         margin: 0px;
+         padding: 0px;
+        }
+      section {
+        float: left;
+        width: 65%;
+        padding: 20px;
+        margin-right: 5%;
+        background-color: #999999;
+        box-sizing: border-box;
+        }
+      aside {
+        float: left;
+        width: 30%;
+        padding: 20px;
+        background-color: #CCCCCC;
+        box-sizing: border-box;
+       }
+     p { 
+        text-align: center;
+       }
+   </style>
+</head>
+<body>
+    <section>
+       <p>Hola</p>
+    </section>
+    <aside>
+       <p>Adiós</p>
+    </aside>
+</body>
+</html>

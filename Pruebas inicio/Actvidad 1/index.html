@@ -1,0 +1,64 @@
+<!--Crea una web amb disseny web adaptable (responsive). La pàgina ha de tenir una pàgina d'inici que enllaci a altres dues.
+
+    Ha de permetre visualitzar el lloc web amb diferents resolucions de pantalla (al manco per tres diferents, petites, mitjanes i grans).
+
+    El text i les imatges s'han d'adaptar a cada resolució.
+
+    La pàgina inicial ha d'estar estructurada mitjançant etiquetes semàntiques (header, main, section, aside, etc.)
+
+    Has de crear un formulari a la pàgina inicial que demani. Pots situar el formulari dins de l'element "aside":
+        Un nom d'usuari,
+        Una edat,
+        Un comentari sobre la web (màxim 35 caràcters de llarg).
+        El comentari del formulari s'ha d'afegir per exemple dins d'una secció de comentaris que crearàs a la pàgina inicial.
+        El formulari ha de tenir el botó de submit, un botó de reset i un botó que permeti afegir els comentaris a la web.
+    Es valorarà un bon estil de la web per a totes les resolucions de pantalla.-->
+
+
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body class="menu">
+        <nav>
+            <ul>
+                <li><a href="default.asp">Home</a></li>
+                <li><a href="news.asp">News</a></li>
+                <li><a href="contact.asp">Contact</a></li>
+                <li><a href="about.asp">About</a></li>
+              </ul> 
+        </nav>
+        <main></main>
+
+        <aside>
+            <form>
+                <fieldset>
+                    <!--Formulario de inscripción-->
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre">
+                    </div>
+                    <div>
+                        <label for="edad">Edad</label>
+                        <input type="number" id="edad">
+                    </div>
+                    <div>
+                        <label for="genero">Género</label>
+                        <input type="text" id="gnero">
+                    </div>
+                    <div>
+                        <label for="boton"></label>
+                        <input type="button" value="Inscribirme" id="boton"
+                    
+                    
+
+                </fieldset>                
+            </form>
+            
+        </aside>
+
+        <footer>
+            <address>C/Juan March 5º C 07054</address>
+        </footer>        
+    </body>
+</html>

@@ -1,0 +1,81 @@
+@media screen and (max-width: 640px) {
+    .menu {
+      background: blue;
+    }
+  }
+  
+@media screen and (min-width: 640px) and (max-width: 1280px) {
+    .menu {
+      background: red;
+    }
+  }
+
+/*Este es el css que se aplica a la página cuando en teoría es para un ordenador*/
+@media screen and (min-width: 1280px) {
+
+    .menu {
+      background: green;
+      overflow-x: hidden;
+      
+    }
+
+    nav{      
+      position: absolute;
+      box-sizing: border-box;
+      padding: 30px;
+      top: 2%;
+      width: 100%;
+      background: yellow;
+    }
+
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+     }
+
+    li{
+      display: inline;
+    }
+
+    aside{
+      box-sizing: border-box;
+      display: block;
+      float: right;
+      background: purple;
+      width: 20%;
+      margin-top: 10%
+    }
+ 
+    input {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      
+      vertical-align:middle;
+      margin-left:20px
+    }
+
+    label {
+      display:inline-block;      
+      padding-top: 5px;
+      text-align: right;
+      width: 140px;
+    }
+
+    div{
+      display: inline-block;
+    }
+
+
+
+   
+
+    footer{
+      background: red;
+      position: absolute;
+      box-sizing: border-box;
+      padding: 10px;
+      bottom: 2%;
+      width: 100%;
+    }
+  }
