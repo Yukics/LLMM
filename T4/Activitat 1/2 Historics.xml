@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "UTF-8" standalone = "yes"?>
+
+<!DOCTYPE fechas[
+    <!ELEMENT fechas (fecha*)> <!--El asterisco es necesario porque ciudad contiene mas elementos-->
+    <!ELEMENT fecha (dia, mes, anyo)>
+    <!ATTLIST fecha descripcion CDATA #REQUIRED>
+    <!ELEMENT dia (#PCDATA)>
+    <!ELEMENT mes (#PCDATA)>
+    <!ELEMENT anyo (#PCDATA)>
+]>
+
+<fechas>
+
+    <fecha descripcion="IBM posa al mercat el PC.">
+        <dia>12</dia>
+        <mes>8</mes>
+        <anyo>1981</anyo>
+    </fecha>
+
+    <fecha descripcion="Se funda Google.">
+        <dia>4</dia>
+        <mes>9</mes>
+        <anyo>1998</anyo>
+    </fecha>
+
+    <fecha descripcion="Se funda Facebook.">
+        <dia>4</dia>
+        <mes>2</mes>
+        <anyo>2004</anyo>
+    </fecha>
+
+</fechas>

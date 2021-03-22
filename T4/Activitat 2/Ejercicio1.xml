@@ -1,0 +1,55 @@
+<!--1. Afegir la DTD (intern), que permeti validar el document XML que es mostra a continuació. 
+    Assegura't que el document XML està ben format abans de declarar la DTD. La DTD que 
+    validi aquest document ha de tenir en compte les següents característiques:
+
+    -És possible que en un moment donat un llibre estigui descatalogat. Si està catalogat, 
+    s'haurà d'indicar el gènere del llibre (novel·la negra, històrica, comèdia i suspens).
+    -No sempre hi ha una web amb la informació del llibre.
+    -Es vol guardar informació sobre el fitxer gràfic que conté la portada del llibre. 
+    Aquest fitxer no sempre està disponible.
+    -En cas que no es proporcioni l'any del llibre es pondrà per defecte 2000.
+-->
+
+<!-- Como en el ejemplo he visto un libro descatalogado con genero 
+    supongo que los libros descatalogados tambíen lo tienen
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD Resuelto-->
+<!DOCTYPE biblioteca[
+    <!ELEMENT biblioteca (llibre*)>    
+
+    <!ELEMENT llibre (titol,idioma,genere,sense_catalogar?,autor,web?,portada?)>
+    <!ATTLIST llibre codi ID #REQUIRED>
+    <!ATTLIST llibre any CDATA "2000">
+
+    <!ELEMENT titol (#PCDATA)>
+    <!ELEMENT idioma (#PCDATA)>
+    <!ELEMENT genere (#PCDATA)>
+    <!ELEMENT genere (#PCDATA)>
+    <!ELEMENT genere (#PCDATA)>
+    <!ELEMENT autor (#PCDATA)>
+    <!ELEMENT web (#PCDATA)>
+    <!ELEMENT portada (#PCDATA)>
+    <!ELEMENT sense_catalogar EMPTY>
+]>
+
+<!-- Enunciado-->
+<biblioteca> 
+    <llibre codi="LL1"  any="2002"> 
+       <titol>El instituto</titol> 
+       <idioma>Anglès</idioma> 
+       <genere>suspens</genere> 
+       <autor>Stephen King</autor> 
+       <web>https://www.todostuslibros.com/libros/el-instituto_978-84-01-02235-7</web> 
+       <portada>/imatges/elinstituto.gif</portada> 
+    </llibre>
+    <llibre codi="LL2"> 
+       <titol> La ruta infinita</titol>
+       <idioma>Espanyol</idioma> 
+       <genere>històrica</genere> 
+       <sense_catalogar/> 
+       <autor>José Calvo Poyato</autor>
+    </llibre> 
+ </biblioteca>

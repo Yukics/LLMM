@@ -1,0 +1,72 @@
+<!-- Enunciado-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE begudes [
+   <!ELEMENT begudes (beguda)*>
+   <!ELEMENT beguda ((codi | nom), preu)>
+   <!ELEMENT codi (#PCDATA)>
+   <!ELEMENT nom (#PCDATA)>
+   <!ELEMENT preu (#PCDATA)>
+]>
+
+<begudes>
+   <beguda>
+      <codi>C09</codi>
+      <nom>taronjada</nom>
+      <preu>1,70</preu>
+   </beguda>
+   <beguda>
+      <preu>1,05</preu>
+   </beguda>
+</begudes>
+
+<!-- Errores-->
+15:	13	The content of element type "beguda" must match "((codi|nom),preu)".
+18:	13	The content of element type "beguda" must match "((codi|nom),preu)".
+
+<!-- Respuesta-->
+La definicion de beguda es que anide el precio y, el codigo o el nombre. Por lo que la primera y segunda
+entrada no cumplen con la condición ya que en una faltan uno de los dos y en el otro sobra uno.
+
+Podemos arreglarlo añadiendo un * a "(codi | nom)" haciendo que pueda haber o no mas de uno, probé con el "?"
+pero me saltaba error.
+
+<!-- Corrección 1-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE begudes [
+   <!ELEMENT begudes (beguda)*>
+   <!ELEMENT beguda ((codi | nom), preu)>
+   <!ELEMENT codi (#PCDATA)>
+   <!ELEMENT nom (#PCDATA)>
+   <!ELEMENT preu (#PCDATA)>
+]>
+<begudes>
+    <beguda>      
+        <nom>taronjada</nom>
+        <preu>1,70</preu>
+    </beguda>
+    <beguda>
+        <codi>C09</codi>
+        <preu>1,05</preu>
+    </beguda>
+</begudes>
+
+<!-- Correción 2 DTD-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE begudes [
+   <!ELEMENT begudes (beguda)*>
+   <!ELEMENT beguda ((codi | nom)*, preu)>
+   <!ELEMENT codi (#PCDATA)>
+   <!ELEMENT nom (#PCDATA)>
+   <!ELEMENT preu (#PCDATA)>
+]>
+
+<begudes>
+   <beguda>
+      <codi>C09</codi>
+      <nom>taronjada</nom>
+      <preu>1,70</preu>
+   </beguda>
+   <beguda>
+      <preu>1,05</preu>
+   </beguda>
+</begudes>

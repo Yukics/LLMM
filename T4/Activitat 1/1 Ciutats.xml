@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8" standalone = "yes"?>
+
+<!DOCTYPE ciudades[
+    <!ELEMENT ciudades (ciudad*)> <!--El asterisco es necesario porque ciudad contiene mas elementos-->
+    <!ELEMENT ciudad (nombre,pais)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ATTLIST ciudad continente CDATA #REQUIRED>
+    <!ELEMENT pais (#PCDATA)>
+]>
+
+<ciudades>
+
+    <ciudad  continente="Asia">
+        <nombre>Nova Delhi</nombre>
+        <pais>India</pais>
+    </ciudad>
+    
+
+    <ciudad continente="Europa">
+        <nombre >Lisboa</nombre>
+        <pais>Portugal</pais>
+    </ciudad>
+    
+
+    <ciudad continente="Africa">
+        <nombre >El cairo</nombre>
+        <pais>Egipto</pais>
+    </ciudad>
+    
+</ciudades>

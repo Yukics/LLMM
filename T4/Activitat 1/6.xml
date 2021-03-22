@@ -1,0 +1,91 @@
+<!-- Enunciado-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE directors_cine [
+  <!ELEMENT directors_cine (director*)>
+  <!ELEMENT director ((nom | llinatge), data_naixement)>
+  <!ELEMENT nom (#PCDATA)>
+  <!ELEMENT llinatge (#PCDATA)>
+  <!ELEMENT data_naixement (#PCDATA)>
+]>
+<directors_cine>
+  <director>
+    <nom>Stanley</nom>
+    <llinatge>Kubrick</llinatge>
+    <data_naixement>26 de juliol de 1928 </data_naixement>
+  </director>
+  <director>
+    <nom>Francis</nombre>
+    <llinatge>Ford Coppola</llinatge>
+    <data_naixement>7 d'abril de 1939</data_naixement>
+  </director>
+</directors_cine>
+<director>
+    <nom>Federico</nombre>
+    <llinatge>Fellini</llinatge>
+    <data_naixement>20 de gener del 1920 </data_naixement>
+  </director>
+</directors_cine>
+
+<!-- Errores-->
+14:	14	The content of element type "director" must match "((nom|llinatge),data_naixement)".
+16:	22	The end-tag for element type "nom" must end with a '>' delimiter.
+
+<!-- Respuesta-->
+El problema radica en la definición de director, al tener si o si, nombre, apellido y fecha de nacimiento
+crea un conflicto con el | que simboliza un "o", por lo que si no tuviesen o apellido o nombre no daria error.
+
+También existe un error de sintaxis en la etiqueta de "nom" ya que en la 2a y 3a entrada cierra con la etiqueta
+"nombre", que no ha sido definida en lugar de cerrar con "</nom>"
+
+Y por último se cierra tras la 2a entrada con "</directors_cine>" la raíz por lo que no se puede volver a cerrar.
+
+<!-- Correción 1-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE directors_cine [
+  <!ELEMENT directors_cine (director*)>
+  <!ELEMENT director ((nom | llinatge), data_naixement)>
+  <!ELEMENT nom (#PCDATA)>
+  <!ELEMENT llinatge (#PCDATA)>
+  <!ELEMENT data_naixement (#PCDATA)>
+]>
+<directors_cine>
+     <director>
+        <llinatge>Kubrick</llinatge>
+        <data_naixement>26 de juliol de 1928 </data_naixement>
+    </director>
+    <director>
+        <nom>Francis</nom>
+        <data_naixement>7 d'abril de 1939</data_naixement>
+    </director>
+    <director>
+        <llinatge>Fellini</llinatge>
+        <data_naixement>20 de gener del 1920 </data_naixement>
+    </director>
+</directors_cine>
+
+<!-- Correción 2 DTD-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE directors_cine [
+  <!ELEMENT directors_cine (director*)>
+  <!ELEMENT director (nom, llinatge, data_naixement)>
+  <!ELEMENT nom (#PCDATA)>
+  <!ELEMENT llinatge (#PCDATA)>
+  <!ELEMENT data_naixement (#PCDATA)>
+]>
+<directors_cine>
+     <director>
+        <nom>Stanley</nom>
+        <llinatge>Kubrick</llinatge>
+        <data_naixement>26 de juliol de 1928 </data_naixement>
+    </director>
+    <director>
+        <nom>Francis</nom>
+        <llinatge>Ford Coppola</llinatge>
+        <data_naixement>7 d'abril de 1939</data_naixement>
+    </director>
+    <director>
+        <nom>Federico</nom>
+        <llinatge>Fellini</llinatge>        
+        <data_naixement>20 de gener del 1920 </data_naixement>
+    </director>
+</directors_cine>

@@ -1,0 +1,66 @@
+<!-- Enunciado-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE productes [
+   <!ELEMENT productes (producte)*>
+   <!ELEMENT producte (identificació, nom)>
+   <!ELEMENT identificació (#PCDATA | codi | id)*>
+   <!ELEMENT codi (#PCDATA)>
+   <!ELEMENT id (#PCDATA)>
+   <!ELEMENT nom (#PCDATA)>
+]>
+
+<productes>
+   <nom>martell</nom>
+   <identificació>
+      Són de mànec vermell i en queden 10 unitats.
+      <codi>MAR264</codi>
+   </identificació>
+   <identificació>
+      <codi>CLAU387</codi>
+      <id>678984</id>
+      No en queda cap al magatzem.
+      <nom>clau anglesa</nom>
+   </identificació>
+</productes>
+
+<!-- Errores-->
+4:	37	A ')' is required in the declaration of element type "producte".
+
+<!-- Respuesta-->
+Estamos definiendo una estructura de productes(producte(identificació(str,codi,id),nom(str))), es decir que
+dentro de productes hay "producte", y en el enunciado no están. 
+
+Nom, tampoco esta anidada dentro de identificació de la segunda entrada. Por otra parte salta un error debido
+a que la etiqueta "identificacio" tiene un acento.
+
+<!-- Corrección-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE productes [
+   <!ELEMENT productes (producte)*>
+   <!ELEMENT producte (identificacio, nom)>
+   <!ELEMENT identificacio (#PCDATA | codi | id)*>
+   <!ELEMENT codi (#PCDATA)>
+   <!ELEMENT id (#PCDATA)>
+   <!ELEMENT nom (#PCDATA)>
+]>
+
+<productes>
+
+    <producte>
+        <identificacio>
+            Són de mànec vermell i en queden 10 unitats.
+            <codi>MAR264</codi>
+        </identificacio>
+        <nom>martell</nom>        
+    </producte>
+   
+    <producte>
+        <identificacio>
+            <codi>CLAU387</codi>
+            <id>678984</id>
+             No en queda cap al magatzem.            
+        </identificacio>
+        <nom>clau anglesa</nom>
+    </producte>   
+
+</productes>

@@ -1,0 +1,70 @@
+<!-- Enunciado-->
+
+<!--
+    Dades dels ticket: 
+
+    codi (que ha de ser un atribut del ticket.
+    Data i hora.
+    Preu Total. Aquest preu es calcularà a partir de:
+        Preu sense IVA.
+        % IVA.
+        Preu amb IVA.
+    Forma de pagament. Que ha de indicar:
+        Tipus de pagament (efectiu/targeta).
+        Número de la targeta (en cas de que sigui pagament amb targeta).
+        Nom del client.
+-->
+
+<!-- Respuesta-->
+
+<?xml version = "1.0" encoding = "UTF-8" standalone = "yes"?>
+
+<!DOCTYPE tickets[
+    <!ELEMENT tickets (dades*)>
+    <!ELEMENT dades (dataihora*, preutotal*,formapag*)>
+    <!ATTLIST dades codi ID #REQUIRED>
+    <!ELEMENT dataihora (data,hora)>
+    <!ELEMENT data (#PCDATA)>
+    <!ELEMENT hora (#PCDATA)>
+    <!ELEMENT preutotal (preunoiva, iva, preusiva)>
+    <!ELEMENT preunoiva (#PCDATA)>
+    <!ELEMENT iva (#PCDATA)>
+    <!ELEMENT preusiva (#PCDATA)>
+    <!ELEMENT formapag (tipuspag, ntarjeta?, nomclient)> 
+    <!ELEMENT tipuspag (#PCDATA)>   
+    <!ELEMENT ntarjeta (#PCDATA)>
+    <!ELEMENT nomclient (#PCDATA)>
+]>
+<tickets>
+    <dades codi="id_001">
+        <dataihora>
+            <data>15-6-2056</data>
+            <hora>16:48:01</hora>
+        </dataihora>
+        <preutotal>
+            <preunoiva>100€</preunoiva>
+            <iva>21%</iva>
+            <preusiva>120€</preusiva>
+        </preutotal>
+        <formapag>
+            <tipuspag>Tarjeta</tipuspag>
+            <ntarjeta>4567 1532 7894 1234</ntarjeta>
+            <nomclient>Pau Bendinat</nomclient>
+        </formapag>
+    </dades>
+    <dades codi="id_002">
+        <dataihora>
+            <data>18-6-2056</data>
+            <hora>13:42:51</hora>
+        </dataihora>
+        <preutotal>
+            <preunoiva>200€</preunoiva>
+            <iva>21%</iva>
+            <preusiva>240€</preusiva>
+        </preutotal>
+        <formapag>
+            <tipuspag>Efectiu</tipuspag>
+            <nomclient>Joan Bensopat</nomclient>
+        </formapag>
+    </dades>
+</tickets>

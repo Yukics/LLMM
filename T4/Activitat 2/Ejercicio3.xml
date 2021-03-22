@@ -1,0 +1,46 @@
+<!-- .-  Definir una DTD interna per validar el document XML que es mostra a continuació. 
+    Quan hagis definit la DTD, mira si el document és vàlid. Primer mira si està ben format. 
+    La DTD ha de tenir en compte:
+
+    -Dins l'element arrel i pot haver més d'un element fill.
+    -L'element "persona" tendrà un atribut "identf" que serà obligatori, 
+    i un atribut "sexe" que no serà obligatori.
+    -L'atribut "parentesc" indicarà la relació de parentesc que tendrà l'element 
+    "persona" amb els altres elements "persona".
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD Resuelto-->
+<!DOCTYPE relacio[
+    <!ELEMENT relacio (persona*)> 
+
+    <!ELEMENT persona (nom,email,parentesc)>
+    <!ATTLIST persona sexe (home|dona) #IMPLIED> 
+    <!ATTLIST persona identf ID #REQUIRED>  
+
+    <!ELEMENT nom (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ELEMENT parentesc EMPTY>
+
+    <!ATTLIST parentesc pare ID #IMPLIED>
+    <!ATTLIST parentesc germa ID #IMPLIED>
+]>
+
+<!-- Enunciado-->
+<relacio>
+   <persona sexe="home" identf="A01">
+      <nom>LLuís Merino</nom>
+      <email>llm@gmail.com</email>
+      <parentesc pare="B02 C03"/>
+   </persona>
+   <persona sexe="home" identf="B02">
+      <nom>Rodrigo Merino</nom>
+      <email>rodrigo@gmail.com</email>
+      <parentesc germa="C03"/>
+   </persona>
+   <persona identf="C03">
+      <nom>Ana Merino</nom>
+      <email>anam@icloud.com</email>
+      <parentesc germa="B02"/>
+   </persona>
+</relacio> 

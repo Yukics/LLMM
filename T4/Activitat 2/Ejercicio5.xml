@@ -1,0 +1,70 @@
+<!--5.- Definir 2 documents XML per representar els resultats d'una lliga de futbol, 
+    un sense atributs i l'altra amb atributs. La informació que es vol emmagatzemar 
+    de cada partit és:
+
+    El nom de l'equip local .
+    El nom de l'equip visitant.
+    Els gols marcats per l'equip local.
+    Els gols marcats per l'equip visitant.
+-->
+
+<!-- XML 1-->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE resultados_liga [
+    <!ELEMENT resultados_liga (partit*)>
+    <!ELEMENT partit (local,visitant)>
+    <!ELEMENT local (nom,gols)>
+    <!ELEMENT visitant (nom,gols)>
+    <!ELEMENT nom (#PCDATA)>
+    <!ELEMENT gols (#PCDATA)>
+
+]>
+<resultados_liga>
+    <partit>
+        <local>
+            <nom>Madrid</nom>
+            <gols>6</gols>
+        </local>
+        <visitant>
+            <nom>Inter</nom>
+            <gols>0</gols>
+        </visitant>
+    </partit>
+    <partit>
+        <local>
+            <nom>Barça</nom>
+            <gols>1</gols>
+        </local>
+        <visitant>
+            <nom>PSG</nom>
+            <gols>0</gols>
+        </visitant>
+    </partit>
+</resultados_liga>
+
+<!-- XML 2-->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE resultados_liga [
+    <!ELEMENT resultados_liga (partit*)>
+    <!ELEMENT partit (local,visitant)>
+    <!ELEMENT local (#PCDATA)>
+    <!ELEMENT visitant (#PCDATA)>
+    <!ATTLIST local gols CDATA #REQUIRED>
+    <!ATTLIST visitant gols CDATA #REQUIRED>
+
+]>
+<resultados_liga>
+    <partit>
+        <local gols="6">Madrid</local>
+        <visitant gols="1">Inter</visitant>
+    </partit>
+    <partit>
+        <local gols="1">Barça</local>
+        <visitant gols="0">PSG</visitant>
+    </partit>
+</resultados_liga>
+
+<!-- Podría haber puesto dentro de local y visitante los goles y el nombre del equipo como un atributo tambíen
+que además serviria de identificador.-->

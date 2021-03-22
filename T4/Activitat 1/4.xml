@@ -1,0 +1,25 @@
+<!--Enunciado-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE numeros [
+  <!ELEMENT numeros (#PCDATA)>
+]>
+<numeros>
+  <numero>10</numero>
+</numeros>
+
+<!--Errores-->
+6:	11	Element type "numero" must be declared.
+7:	11	The content of element type "numeros" must match "null".
+
+<!--Respuesta-->
+No es correcto ya que "numeros" es padre de "numero" y no contiene caracteres, sino otro elemento.
+
+<!--Corrección-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE numeros [
+  <!ELEMENT numeros (numero)>
+  <!ELEMENT numero (#PCDATA)>
+]>
+<numeros>
+  <numero>10</numero>
+</numeros>

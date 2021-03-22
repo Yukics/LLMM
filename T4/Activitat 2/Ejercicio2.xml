@@ -1,0 +1,41 @@
+<!--2. Definir una DTD interna per validar el document XML que es mostra a continuació. 
+    Quan hagis definit la DTD, mira si el document és vàlid. Primer mira si està ben format. 
+    La DTD ha de tenir en compte:
+
+    -Dins l'element arrel i pot haver més d'un element fill.
+    -L'element "producte" podrà ser ò "ratoli", ò "teclat" ò "monitor".
+    -"ratoli", "teclat" i "monitor" han de tenir un codi identificador únic. No poden ser 
+    elements buits.
+
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD Resuelto-->
+<!DOCTYPE productes[
+    <!ELEMENT productes (producte*)>    
+
+    <!ELEMENT producte (ratoli|teclat|monitor)>
+
+    <!ELEMENT ratoli (#PCDATA)>
+    <!ATTLIST ratoli codi ID #REQUIRED>
+
+    <!ELEMENT teclat (#PCDATA)>
+    <!ATTLIST teclat codi ID #REQUIRED>
+
+    <!ELEMENT monitor (#PCDATA)> 
+    <!ATTLIST monitor codi ID #REQUIRED>
+]>
+
+<!-- Enunciado-->
+<productes>
+    <producte>
+        <ratoli codi="r01"> sense fil space </ratoli>
+    </producte>
+    <producte>
+        <teclat codi="t03">Teclat de colors </teclat>
+    </producte>
+    <producte>
+        <monitor codi="m100">Tàctil</monitor>
+    </producte>
+ </productes>

@@ -1,0 +1,89 @@
+<!-- Enunciado-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE obres_art [
+    <!ELEMENT obres_art (cuadro*, escultura*, fotografia*)>
+    <!ELEMENT cuadro EMPTY>
+    <!ELEMENT escultura (#PCDATA)>
+    <!ELEMENT fotografia (#PCDATA)>
+    <!ATTLIST cuadro titol ID #REQUIRED>
+    <!ATTLIST cuadro autor CDATA #REQUIRED>
+    <!ATTLIST escultura artista ID #REQUIRED>
+    <!ATTLIST escultura material CDATA #REQUIRED>
+    <!ATTLIST fotografia fotograf ID #REQUIRED>
+    <!ATTLIST fotografia any CDATA #REQUIRED>
+]>
+
+<obres_art>
+    <cuadro titol="Adán y Eva" autor="Alberto Durero" />
+    <cuadro titol="Adán y Eva" autor="Lucas Cranach, el viejo" />
+    <escultura artista="Miguel Angel" material="Marmol blanco"> David </escultura>
+    <escultor artista="Rodin" material="Marmol"> El beso </escultor>
+    <fotografia fotograf="Charles C. Ebbets" any="1932">Almuerzo en lo alto de un rascacielos</fotografia>
+    <fotografia any="1989">Plaza de Tiananmen, </fotografia>
+</obres_art>
+
+<!-- Errores-->
+16:	55	Attribute value "Adán y Eva" of type ID must be an NCName when namespaces are enabled.
+17:	64	Attribute value "Adán y Eva" of type ID must be an NCName when namespaces are enabled.
+18:	61	Attribute value "Miguel Angel" of type ID must be an NCName when namespaces are enabled.
+19:	46	Element type "escultor" must be declared.
+20:	54	Attribute value "Charles C. Ebbets" of type ID must be an NCName when namespaces are enabled.
+21:	25	Attribute "fotograf" is required and must be specified for element type "fotografia".
+22:	13	The content of element type "obres_art" must match "(cuadro*,escultura*,fotografia*)".
+
+<!-- Respuesta-->
+Al elemento "cuadro" el atributo titol esta definido como ID aunque es una cadena de caracteres.
+No existe el elemento escultor en el DTD, y sin embargo esta en el cuerpo.
+Con el atributo artista del elemento escultura sucede lo mismo que con el titulo de cuadro se asigna
+el tipo ID pese a ser una cadena de caracteres.
+Y al igual que con cuadro y escultura, fotograf del elemento fotografia esta definido como ID.
+En la última entrada no esta el atributo fotograf pese a ser requerido.
+
+<!-- Correción 1-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE obres_art [
+    <!ELEMENT obres_art (cuadro*, escultura*, fotografia*)>
+    <!ELEMENT cuadro EMPTY>
+    <!ELEMENT escultura (#PCDATA)>
+    <!ELEMENT fotografia (#PCDATA)>
+    <!ATTLIST cuadro titol ID #REQUIRED>
+    <!ATTLIST cuadro autor CDATA #REQUIRED>
+    <!ATTLIST escultura artista ID #REQUIRED>
+    <!ATTLIST escultura material CDATA #REQUIRED>
+    <!ATTLIST fotografia fotograf ID #REQUIRED>
+    <!ATTLIST fotografia any CDATA #REQUIRED>
+]>
+
+<obres_art>
+    <cuadro titol="id_001" autor="Alberto Durero" />
+    <cuadro titol="id_002" autor="Lucas Cranach, el viejo" />
+    <escultura artista="id_003" material="Marmol blanco"> David </escultura>
+    <escultura artista="id_004" material="Marmol"> El beso </escultura>
+    <fotografia fotograf="id_005" any="1932">Almuerzo en lo alto de un rascacielos</fotografia>
+    <fotografia fotograf="id_006" any="1989">Plaza de Tiananmen, </fotografia>
+</obres_art>
+
+
+<!-- Correción 2 DTD-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE obres_art [
+    <!ELEMENT obres_art (cuadro*, escultura*, fotografia*)>
+    <!ELEMENT cuadro EMPTY>
+    <!ELEMENT escultura (#PCDATA)>
+    <!ELEMENT fotografia (#PCDATA)>
+    <!ATTLIST cuadro titol CDATA #REQUIRED>
+    <!ATTLIST cuadro autor CDATA #REQUIRED>
+    <!ATTLIST escultura artista CDATA #REQUIRED>
+    <!ATTLIST escultura material CDATA #REQUIRED>
+    <!ATTLIST fotografia fotograf CDATA #REQUIRED> <!-- Podría quitar el campo #Required o insertar un fotografo-->
+    <!ATTLIST fotografia any CDATA #REQUIRED>
+]>
+
+<obres_art>
+    <cuadro titol="Adán y Eva" autor="Alberto Durero" />
+    <cuadro titol="Adán y Eva" autor="Lucas Cranach, el viejo" />
+    <escultura artista="Miguel Angel" material="Marmol blanco"> David </escultura>
+    <escultura artista="Rodin" material="Marmol"> El beso </escultura>
+    <fotografia fotograf="Charles C. Ebbets" any="1932">Almuerzo en lo alto de un rascacielos</fotografia>
+    <fotografia fotograf="Charlie Cole" any="1989">Plaza de Tiananmen, </fotografia>
+</obres_art>

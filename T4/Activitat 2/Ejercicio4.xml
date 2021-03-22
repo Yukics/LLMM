@@ -1,0 +1,23 @@
+<!-- 4.- Si tenim el següent fitxer anomenat "llei.txt" que inclou el següent text:
+
+La Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía 
+de los derechos digitales (LOPD-GDD) es una ley orgánica aprobada por las Cortes Generales 
+de España que tiene por objeto adaptar el Derecho interno español al Reglamento General de 
+Protección de Datos. Esta ley orgánica deroga a la anterior Ley Orgánica 15/1999 de Protección 
+de Datos de Carácter Personal (aunque se mantiene vigente para la regulación de ciertas actividades).
+
+- Crear un XML que mostri el contingut d'aquesta entitat (fitxer "llei.txt"), amb el seu DTD 
+corresponent. Basta creis un sol element a l'XML.
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD Resuelto-->
+<!DOCTYPE leyes[
+    <!ELEMENT leyes (#PCDATA)>
+    <!ENTITY lleitxt SYSTEM "llei.txt">
+]>
+
+<leyes>
+     &lleitxt;
+</leyes>

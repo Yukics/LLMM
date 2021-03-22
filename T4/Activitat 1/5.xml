@@ -1,0 +1,30 @@
+<!--Enunciado-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aficions [
+  <!ELEMENT aficions (afició*)>
+  <!ELEMENT aficio (#PCDATA)>
+]>
+<aficions>
+  <aficio>Llegir</aficio>
+  Nadar
+  <aficio>Caminar</aficio>
+</aficions>
+
+<!--Errores-->
+3:	29	A ')' is required in the declaration of element type "aficions".
+
+<!--Respuesta-->
+No es correcto ya que no existe ningún elemento "afició" con acento, debería ser "aficio" sin acento 
+para que fuese correcto. Y además existe una aficion sin etiquetas.
+
+<!--Corrección-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aficions [
+  <!ELEMENT aficions (aficio*)>
+  <!ELEMENT aficio (#PCDATA)>
+]>
+<aficions>
+  <aficio>Llegir</aficio>
+  <aficio>Nadar</aficio>  
+  <aficio>Caminar</aficio>
+</aficions>
